@@ -10,7 +10,9 @@ namespace SchereSteinPapier
     {
         static void Main(string[] args)
         {
-            Game.PickWinner();
+            Game.Start();
+
+            Game.Running();
 
             // Feritg
             Console.ReadKey();

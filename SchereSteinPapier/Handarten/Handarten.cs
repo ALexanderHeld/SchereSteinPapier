@@ -10,6 +10,8 @@ namespace SchereSteinPapier
     {
         public enum HandartEnum
         {
+            help = -2,
+            exit = -1,
             Papier = 0,
             Schere,
             Stein,

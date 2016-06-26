@@ -28,7 +28,7 @@ namespace SchereSteinPapier
         public void RandomHand()
         {
             Random rnd = new Random();
-            Handarten.HandartEnum Ziel = (Handarten.HandartEnum)rnd.Next(0, Enum.GetValues(typeof(Handarten.HandartEnum)).Length);
+            Handarten.HandartEnum Ziel = (Handarten.HandartEnum)rnd.Next(0, Enum.GetValues(typeof(Handarten.HandartEnum)).Length - 2);
 
             switch (Ziel)
             {

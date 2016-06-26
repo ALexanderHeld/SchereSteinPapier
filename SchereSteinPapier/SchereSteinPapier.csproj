@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handarten\Exit.cs" />
+    <Compile Include="Handarten\Help.cs" />
+    <Compile Include="History.cs" />
     <Compile Include="Mitspieler\Computer.cs" />
     <Compile Include="Handarten\Echse.cs" />
     <Compile Include="Game.cs" />
