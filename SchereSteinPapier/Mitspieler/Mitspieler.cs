@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchereSteinPapier
 {
-    class Program
+    class Mitspieler
     {
-        static void Main(string[] args)
-        {
-            Game.PickWinner();
-
-            // Feritg
-            Console.ReadKey();
-        }
     }
 }

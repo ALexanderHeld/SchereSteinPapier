@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mitspieler\Computer.cs" />
+    <Compile Include="Handarten\Echse.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Handarten\Handarten.cs" />
+    <Compile Include="Mitspieler\Mitspieler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Handarten\Papier.cs" />
+    <Compile Include="Mitspieler\Spieler.cs" />
+    <Compile Include="Handarten\Spock.cs" />
+    <Compile Include="Handarten\Stein.cs" />
+    <Compile Include="Handarten\Schere.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
