@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace SchereSteinPapier
 {
-    class  Papier : Handarten
+    class Papier : Handarten
     {
-        public Handarten.HandartEnum ThisHandType = HandartEnum.Papier;
-        public List<HandartEnum> Schlägt = new List<HandartEnum> { HandartEnum.Stein, HandartEnum.Spock };
-        public List<HandartEnum> WirdGeschlagen = new List<HandartEnum> { HandartEnum.Schere, HandartEnum.Echse};
+        private new Handarten.HandartEnum ThisHandType = HandartEnum.Papier;
+        private new List<HandartEnum> Schlägt = new List<HandartEnum> { HandartEnum.Stein, HandartEnum.Spock };
+
+        public override Handarten.HandartEnum GetThisHandType()
+        {
+            return this.ThisHandType;
+        }
+
+        public override List<HandartEnum> GetSchlägt()
+        {
+            return this.Schlägt;
+        }
     }
 }

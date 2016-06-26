@@ -8,11 +8,21 @@ namespace SchereSteinPapier
 {
     class Spieler : Mitspieler
     {
-        private static Spieler obj = new Spieler();
+        private static Spieler instance = null;
+
         private Spieler() { }
-        public static Spieler Instance { get { return obj; } }
+        public static Spieler Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Spieler();
+                return instance;
+            }
+        }
 
         public Handarten ausgabeHand { get; private set; }
+        private string Name { get; set; }
 
         public void ChooseHand()
         {
@@ -53,19 +63,19 @@ namespace SchereSteinPapier
                         }
                         if (eingabe == Handarten.HandartEnum.Papier.ToString().ToLower())
                         {
-                            ausgabeHand = new Schere();
+                            ausgabeHand = new Papier();
                         }
                         if (eingabe == Handarten.HandartEnum.Stein.ToString().ToLower())
                         {
-                            ausgabeHand = new Schere();
+                            ausgabeHand = new Stein();
                         }
                         if (eingabe == Handarten.HandartEnum.Echse.ToString().ToLower())
                         {
-                            ausgabeHand = new Schere();
+                            ausgabeHand = new Echse();
                         }
                         if (eingabe == Handarten.HandartEnum.Spock.ToString().ToLower())
                         {
-                            ausgabeHand = new Schere();
+                            ausgabeHand = new Spock();
                         }
                         eingabeRichtig = true;
                     }
@@ -73,6 +83,23 @@ namespace SchereSteinPapier
                         Console.WriteLine("Du tust nie was man dir sagt!");
                 }
             }
+        }
+
+        public void SetName(string name)
+        {
+            bool nameFound = false;
+            while (!nameFound)
+            {
+                if (!(String.IsNullOrEmpty(name) || String.IsNullOrWhiteSpace(name)))
+                {
+                    Name = name;
+                    nameFound = true;
+                }
+
+                else
+                    Console.WriteLine("Gib bitte den Namen richtig ein.");
+            }
+            
         }
     }
 }

@@ -9,11 +9,21 @@ namespace SchereSteinPapier
     class Computer : Mitspieler
     {
         // Singleton
-        private static Computer obj;
-        private Computer() { }
-        public static Computer Instance { get { return obj; } }
 
-        public Handarten ausgabeHand { get; private set; } // von außen nur lesen
+        private static Computer instance = null;
+
+        private Computer() { }
+        public static Computer Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Computer();
+                return instance;
+            }
+        }
+
+        public Handarten ausgabeHand { get; private set; } // von außen: nur lesen
 
         public void RandomHand()
         {
@@ -39,5 +49,6 @@ namespace SchereSteinPapier
                     break;
             }
         }
+
     }
 }

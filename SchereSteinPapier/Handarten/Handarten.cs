@@ -17,8 +17,17 @@ namespace SchereSteinPapier
             Spock
         }
 
-        public Handarten.HandartEnum ThisHandType;
-        public List<HandartEnum> Schlägt;
-        public List<HandartEnum> WirdGeschlagen;
+        public virtual HandartEnum ThisHandType { get; set; }
+        public virtual List<HandartEnum> Schlägt { get; set; }
+
+        public virtual Handarten.HandartEnum GetThisHandType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual List<HandartEnum> GetSchlägt()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

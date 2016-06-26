@@ -8,6 +8,11 @@ namespace SchereSteinPapier
 {
     class Game
     {
+        public static void Start()
+        {
+            Console.WriteLine("Gib deinen Namen ein!");
+            Spieler.Instance.SetName(Console.ReadLine());
+        }
         public static Mitspieler PickWinner()
         {
             bool GewinnerGefunden = false;
@@ -15,23 +20,23 @@ namespace SchereSteinPapier
 
             while (!GewinnerGefunden)
             {
-                Computer.Instance.RandomHand();
                 Spieler.Instance.ChooseHand();
-
+                Computer.Instance.RandomHand();
+                
+                // Gleichstand
                 if (Spieler.Instance.ausgabeHand.Equals(Computer.Instance.ausgabeHand))
                 {
                     Console.WriteLine("Gleichstand!");
                     continue;
                 }
-
-                if (Spieler.Instance.ausgabeHand.Schlägt.Contains(Computer.Instance.ausgabeHand.ThisHandType))
+                // Spieler Gewinnt
+                if (Spieler.Instance.ausgabeHand.GetSchlägt().Contains(Computer.Instance.ausgabeHand.GetThisHandType()))
                 {
                     Console.WriteLine("Spieler Gewinnt!");
                     Gewinner = Spieler.Instance;
                     GewinnerGefunden = true;
-                    
                 }
-
+                // Computer Gewinnt
                 else
                 {
                     Console.WriteLine("Computer Gewinnt!");
@@ -43,6 +48,5 @@ namespace SchereSteinPapier
 
             return Gewinner;
         }
-        
     }
 }

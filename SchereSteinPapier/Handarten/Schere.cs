@@ -8,8 +8,17 @@ namespace SchereSteinPapier
 {
     class Schere : Handarten
     {
-        public Handarten.HandartEnum ThisHandType = HandartEnum.Schere;
-        public List<HandartEnum> Schlägt = new List<HandartEnum> { HandartEnum.Papier, HandartEnum.Echse };
-        public List<HandartEnum> WirdGeschlagen = new List<HandartEnum> { HandartEnum.Stein, HandartEnum.Spock };
+        public new Handarten.HandartEnum ThisHandType = HandartEnum.Schere;
+        public new List<HandartEnum> Schlägt = new List<HandartEnum> { HandartEnum.Papier, HandartEnum.Echse };
+
+        public override Handarten.HandartEnum GetThisHandType()
+        {
+            return this.ThisHandType;
+        }
+
+        public override List<HandartEnum> GetSchlägt()
+        {
+            return this.Schlägt;
+        }
     }
 }
